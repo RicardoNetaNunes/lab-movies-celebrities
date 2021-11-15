@@ -1,0 +1,32 @@
+<h2> Movies </h2>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Plot</th>
+      <th scope="col">Cast</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each movies}}
+    <tr>
+      <th scope="row">{{this.title}} </th>
+      <td>{{this.genre}}</td>
+      <td>{{this.plot}}</td>
+      <td>{{this.celebrities.name}}</td>
+    <td> 
+<form action="/movies/{{this._id}}" method="GET">
+  <button type="submit" class="btn btn-warning customB">Details</button>
+</form>
+
+      </td>
+    
+    </tr>
+{{/each}}
+
+    
+  </tbody>
+</table>
